@@ -10,14 +10,12 @@ const nameAndNumberSlice = createSlice({
   initialState: initialState,
   reducers: {
     updateName(state, action) {
-      // console.log('stttn', state);
       return {
         name: action.payload,
         number: state.number,
       };
     },
     updateNumber(state, action) {
-      // state.number = action.payload;
       return {
         name: state.name,
         number: action.payload,

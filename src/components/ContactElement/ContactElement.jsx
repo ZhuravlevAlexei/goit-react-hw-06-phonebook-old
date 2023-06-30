@@ -4,10 +4,10 @@ import { deleteContact } from '../Redux/contactsAndFilterSlice';
 import PropTypes from 'prop-types';
 import css from './ContactElement.module.css';
 
-const ContactElement = ({ contactsCash }) => {
+const ContactElement = ({ contacts }) => {
   const dispatch = useDispatch();
 
-  return contactsCash.map(elm => {
+  return contacts.map(elm => {
     return (
       <li key={elm.id} className={css.contItem}>
         {elm.name}: {elm.number}
@@ -24,7 +24,7 @@ const ContactElement = ({ contactsCash }) => {
 };
 
 ContactElement.propTypes = {
-  contactsCash: PropTypes.arrayOf(
+  contacts: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
