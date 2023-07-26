@@ -15,25 +15,36 @@ const contactsAndFilterSlice = createSlice({
   initialState: initialState,
   reducers: {
     addContact(state, action) {
-      return {
-        contacts: [...state.contacts, action.payload],
-        filter: state.filter,
-      };
+      state.contacts.push(action.payload);
     },
     deleteContact(state, action) {
-      return {
-        contacts: state.contacts.filter(
-          contact => contact.id !== action.payload
-        ),
-        filter: state.filter,
-      };
+      state.contacts = state.contacts.filter(
+        contact => contact.id !== action.payload
+      );
     },
     updateFilter(state, action) {
-      return {
-        contacts: [...state.contacts],
-        filter: action.payload,
-      };
+      state.filter = action.payload;
     },
+    // addContact(state, action) {
+    //   return {
+    //     contacts: [...state.contacts, action.payload],
+    //     filter: state.filter,
+    //   };
+    // },
+    // deleteContact(state, action) {
+    //   return {
+    //     contacts: state.contacts.filter(
+    //       contact => contact.id !== action.payload
+    //     ),
+    //     filter: state.filter,
+    //   };
+    // },
+    // updateFilter(state, action) {
+    //   return {
+    //     contacts: [...state.contacts],
+    //     filter: action.payload,
+    //   };
+    // },
   },
 });
 
