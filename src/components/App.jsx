@@ -20,6 +20,7 @@ const App = () => {
   return (
     <div className={css.phonebookArea}>
       <Toaster />
+      <h3>OLD VERSION 2023.</h3>
       <h3 className={css.mainTitle}>Phonebook</h3>
       <ContactForm />
       <h3>Contacts</h3>
